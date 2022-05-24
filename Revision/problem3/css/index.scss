@@ -124,7 +124,8 @@ header {
         }
 
         button.login:hover {
-            background: color(BlackTitle);
+            opacity: 0.9;
+            color: color(BlackTitle);
             transition: 0.2s 0.06s ease;
         }
     }

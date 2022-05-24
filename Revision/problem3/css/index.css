@@ -90,7 +90,8 @@ header div.header-login-button button.login {
   cursor: pointer;
 }
 header div.header-login-button button.login:hover {
-  background: #2B2B2B;
+  opacity: 0.9;
+  color: #2B2B2B;
   transition: 0.2s 0.06s ease;
 }
 
