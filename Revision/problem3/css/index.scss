@@ -1,0 +1,1233 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Color Scheme
+$colors: (
+    Fidelity1: #0FAE96,
+    Fidelity2: #511281,
+    Text1: #000000,
+    Text2: #808080,
+    Text3: #C6C6C6,
+    Text4: #EAEAEA,
+    Text5: #11011E,
+    TitleColor: #0D3E36,
+    SubtitleColor: #4D625F,
+    BlackTitle: #2B2B2B,
+    PureWhite: #FFFFFF
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+};
+
+* {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+  
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    font-family: "Raleway", "Roboto", "sans-serif";
+    font-style: normal;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    background: color(PureWhite);
+    border-bottom: 1px solid color(Text4);
+    z-index: 50000;
+
+    a {
+        padding-left: 90px;
+    }
+
+    ul.header-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li {
+            a {
+                padding: 20px;
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                color: color(SubtitleColor);
+            }
+
+            a:hover {
+                color: color(Fidelity1);
+                transition: 0.4s 0.1s ease;
+            }
+        }
+
+        li:nth-child(1) {
+            a {
+                color: color(Fidelity1);
+                font-weight: 700;
+            }
+        }
+
+    }
+
+    div.header-login-button {
+        padding-right: 90px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 205px;
+        height: 50px;
+
+          p.language {
+            color: color(SubtitleColor);
+            }
+
+          img {
+            margin-right: 10px;
+            }
+
+          img.icon-down {
+              cursor: pointer;
+          }
+
+          button.login {
+            margin-left: 20px;
+            background: color(Fidelity1);
+            border: none;
+            border-radius: 10px;
+            width: 104px;
+            height: 50px;
+            text-align: center;
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            font-feature-settings: 'salt' on, 'liga' off;
+            color: color(PureWhite);
+            cursor: pointer;
+        }
+
+        button.login:hover {
+            background: color(BlackTitle);
+            transition: 0.2s 0.06s ease;
+        }
+    }
+}
+
+div.wrapper {
+    width: 1356px;
+    margin: 100px auto 0 auto;
+
+    div.secondary-wrapper {
+        width: 100%;
+        
+    }
+
+    div.bg-screen-one {
+        position: relative;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        height: 600px;
+
+        div.cta {
+            width: 788px;
+            height: 246px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 150px;
+
+            h1.heading {
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 44px;
+                text-align: center;
+                font-feature-settings: 'salt' on, 'liga' off; 
+                color: color(TitleColor);
+                margin-bottom: 18px;
+            }
+
+            p.subtitle {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 160%;
+                text-align: center;
+                font-feature-settings: 'salt' on, 'liga' off;
+                color: color(SubtitleColor);
+                margin-bottom: 50px;
+            }
+
+            button.cta {
+                width: 190px;
+                height: 56px;
+                background: color(Fidelity1);
+                border-radius: 10px;
+                border: none;
+                text-align: center;
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                font-feature-settings: 'salt' on, 'liga' off;
+                color: color(PureWhite);
+                cursor: pointer;
+            }
+
+            button.cta:hover {
+               opacity: 0.9;
+            }
+        }
+
+        div.bg-elipse {
+            position: absolute;
+            top: 65px;
+            left: 50%;
+            transform: translate(-50%);
+            height: 240px;
+            width: 1050px;
+            border-radius: 0px;
+            z-index: -100;
+
+            div.elipse-one, div.elipse-two {
+                width: 675px;
+                height: 100%;
+                border-radius: 50%/50%;
+                position: absolute;
+                top: 0;
+            }
+
+            div.elipse-one {
+                left: 0;
+                background: #7000FF4D;
+                filter: blur(200px);
+            }
+
+            div.elipse-two {
+               right: 0; 
+               background: #FF00C74D;
+               filter: blur(200px);
+
+            }
+        }
+
+        div.market-trend {
+            width: 100%;
+            height: 243px;
+            margin-top: 80px;
+            margin-bottom: 20px;
+
+            p.heading {
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 32px;
+                font-feature-settings: 'salt' on, 'liga' off;
+                color: color(TitleColor);
+                margin-bottom: 24px;
+            }
+            
+            div.trend-charts {
+                display: flex;
+                flex-flow: wrap;
+                justify-content: space-between;
+
+                div.coin-chart {
+                    width: 297px;
+                    height: 187px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background: color(PureWhite);
+                    border: 1px solid color(Text4);
+                    border-radius: 18px;
+                    cursor: pointer;
+                    box-sizing: border-box;
+
+                    div.upper {
+                        width: 254px;
+                        height: 50px;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 35px;
+
+                        div.label {
+                            height: 100%;
+                            width: 167px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+
+                        p.one {
+                            font-family: 'Raleway';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 18px;
+                            line-height: 21px;
+                            color: color(Text5);
+                        }
+
+                        p.two {
+                            font-family: 'Raleway';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 10px;
+                            line-height: 12px;
+                            text-align: center;
+                            color: #1D1429;
+                            text-transform: uppercase;
+                            padding: 5px 6px 4px 6px;
+                            background: #C6C6C666;
+                            border-radius: 4px;
+                        }
+
+                        // a {
+                        //     padding: 2px 2px;
+                        // // }
+
+                        // a:hover {
+                        // background: #C6C6C666;
+                        // border-radius: 50%;
+                        // }
+                    }
+
+                    div.lower {
+                        width: 254px;
+                        height: 66px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        div.price {
+                            h4.global-price {
+                                font-family: 'Roboto';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 24px;
+                                line-height: 28px;
+                                color: color(Text5);
+                            }
+
+                            p.percent-change-in-price {
+                                font-family: 'Roboto';
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 160%;
+                                font-feature-settings: 'salt' on, 'liga' off;
+                                color: color(Text2);
+                                margin-top: 10px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.bg-screen-two {
+        width: 100%;
+        height: 900px;
+        // margin-top: 250px;
+        position: relative;
+        left: 0;
+        top: 150px;
+
+        div.CryptoCap-features {
+            width: 100%;
+            height: 500px;
+
+            div.caption {
+                width: 100%;
+                height: 115px;
+                text-align: center;
+                margin-top: 59px;
+
+                h1.heading {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 44px;
+                    text-align: center;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(TitleColor);
+                }
+
+                p.subtitle {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 160%;
+                    text-align: center;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(SubtitleColor);
+                    margin-top: 16px;
+                }
+            }
+
+            div.features {
+                width: 100%;
+                height: 300px;
+                margin-top: 40px;
+                display: flex;
+                flex-flow: wrap;
+                justify-content: space-between;
+
+                div.feat-box {
+                    width: 296px;
+                    height: 100%;
+                    background: color(PureWhite);
+                    border: 1px solid color(Text4);
+                    backdrop-filter: blur(200px);
+                    border-radius: 18px;
+                    box-sizing: border-box;
+
+                    img {
+                        margin-top: 29px;
+                        margin-left: 29px;
+                    }
+
+                    p.feature-title {
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 30px;
+                        font-feature-settings: 'salt' on, 'liga' off;
+                        color: color(BlackTitle);
+                        margin-left: 29px;
+                        margin-top: 20px;
+                        margin-bottom: 12px;
+                    }
+
+                    p.feat-content {
+                        width: 238px;
+                        margin-left: 29px;
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-feature-settings: 'salt' on, 'liga' off;
+                        color: color(SubtitleColor);
+                    }
+
+                    button.explain-more {
+                        width: 135px;
+                        height: 24px;
+                        background: transparent;
+                        border: none;
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        text-align: left;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 24px;
+                        font-feature-settings: 'salt' on, 'liga' off;
+                        color: color(Fidelity1);
+                        margin-left: 29px;
+                        margin-top: 10px;
+                        background: url(../icons.svg/forward_arrow.svg) no-repeat;
+                        background-size: 24px 24px;
+                        background-position: 80px 0;
+                        cursor: pointer;
+                    }
+
+                    button.explain-more:hover {
+                        color: color(BlackTitle);
+                    }
+                }
+            }
+        }
+
+        div.action-to-learn {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid color(Text4);
+            border-radius: 12px;
+            box-sizing: border-box;
+
+            div.new{
+                width: 536px;
+                height: 100px;
+
+                p.new {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 32px;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(BlackTitle);
+                    margin-bottom: 12px;
+                    margin-left: 29px;
+                }
+
+                p.subtitle {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 160%;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(Text2);
+                    margin-left: 29px;
+                }
+            }
+
+            button.action-to-learn {
+                width: 207px;
+                height: 56px;
+                background: color(Fidelity1);
+                border-radius: 10px;
+                border: none;
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 24px;
+                text-align: center;
+                font-feature-settings: 'salt' on, 'liga' off;
+                color: color(PureWhite);
+                margin-left: 400px;
+                cursor: pointer;
+
+            }
+
+            button.action-to-learn:hover {
+                opacity: 0.9;
+            }
+        }
+
+        div.screen-two-elipse-one {
+            width: 766.61px;
+            height: 545.5px;
+            position: absolute;
+            top: -200px;
+            left: 0;
+            z-index: -200;
+            background: color(PureWhite);
+
+            div.elipse1 {
+                position: absolute;
+                width: 493.28px;
+                height: 633.8px;
+                left: -118.28px;
+                top: -114.25px;
+                background: #3DFFFF40;
+                filter: blur(200px);
+                border-radius: 0% 50% 60% 40%;
+                z-index: -100;
+                transform: rotateX(35deg);
+            }
+        }
+
+        div.screen-two-elipse-two {
+            position: absolute;
+            width: 1029.83px;
+            height: 528.62px;
+            left: 410.25px;
+            top: 259.38px;
+            background: color(PureWhite);
+            z-index: -200;
+
+            div.elipse2 {
+                position: absolute;
+                width: 702.72px;
+                height: 658.57px;
+                right: 0;
+                top: 134px;
+                background: #7000FF40;
+                filter: blur(200px);
+                border-radius: 0% 50% 60% 40%;
+                z-index: -100;
+                transform: rotateX(-35deg);
+            }
+        }
+    }
+
+    div.bg-screen-three {
+        width: 100%;
+        height: 770px;
+        margin-top: 150px;
+
+        div.market-update {
+           width: 100%;
+           height: 100%;
+           
+           h1.heading {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 31px;
+            line-height: 44px;  
+            font-feature-settings: 'salt' on, 'liga' off;
+            color: color(TitleColor);
+            margin-bottom: 10px;
+            margin-top: 10px;
+           }
+
+           div.category {
+               width: 100%;
+               height: 90%;
+
+               p.title {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 160%;
+                font-feature-settings: 'salt' on, 'liga' off;
+                color: color(SubtitleColor);
+                margin-bottom: 12px;
+               }
+
+               div.crypto-sector {
+                   width: 100%;
+                   height: 44px;
+                   display: flex;
+                   justify-content: space-between;
+                   align-items: center;
+                   margin-bottom: 15px;
+
+                   ul.sector-link {
+                       width: 700px;
+                       height: 95%;
+                       display: flex;
+                       justify-content: space-between;
+                       align-items: center;
+
+                       li {
+                           height: 100%;
+
+                           a {
+                                padding: 10px 12px;
+                                font-family: 'Roboto';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 24px;
+                                font-feature-settings: 'salt' on, 'liga' off;
+                                color: color(Text2);
+                                background: color(PureWhite);
+                                border: 1px solid color(Text4);
+                                border-radius: 6px;
+                                box-sizing: border-box;
+                                display: inline-block;
+                           }
+                       }
+
+                       li:nth-child(1) {
+                           a {
+                               background: color(TitleColor);
+                               color: color(PureWhite);
+                               border: none;
+                           }
+                       }
+
+                       li {
+                           a:hover {
+                              background: color(TitleColor);
+                              color: color(PureWhite);
+                              border: none;
+                              transition: 0.5s 0.1s ease-in-out;
+                           }
+                        }
+                    }
+
+                    input[type=search] {
+                        width: 282px;
+                        height: 100%;
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-feature-settings: 'salt' on, 'liga' off;
+                        color: color(SubtitleColor);
+                        border: 1px solid color(Text4);
+                        border-radius: 6px;
+                        padding-left: 45px;
+                        padding-right: 15px;
+                        background: url(../icons.svg/search\ icon.svg) no-repeat;
+                        background-position: 5% 50%;
+                        background-size: 18px 18px;
+                    }
+                }
+
+                table.market-updates {
+                    width: 100%;
+                    height: 499px;
+                    border-collapse: collapse;
+                    padding-left: 25px;
+                    text-align: right;
+
+                    tr {
+                        border-bottom: 1px solid color(Text4);
+
+                    }
+
+                    thead {
+                        text-align: right;
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 49px;
+                        color: color(SubtitleColor);
+
+                        tr {
+                            th:nth-child(2) {
+                                text-align: center;
+                            }
+                        }
+                        
+                    }
+
+                    tbody {
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-feature-settings: 'salt' on, 'liga' off;
+                        color: color(BlackTitle);
+
+                        td.color-green {
+                            color: color(Fidelity1);
+                        }
+
+                        td.color {
+                            color: red;
+                        }
+
+                        td {
+                            margin-top: 10px;
+                        }
+
+                        td.flex {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-top: 10px;
+
+                            img {
+                                margin-right: 15px;
+                            }
+                        }
+
+                        td:last-child {
+                           button.trade {
+                            font-family: 'Raleway';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 12px;
+                            line-height: 24px;
+                            text-align: center;
+                            font-feature-settings: 'salt' on, 'liga' off;
+                            color: color(PureWhite);
+                            background: color(Fidelity1);
+                            border-radius: 10px;
+                            width: 92px;
+                            height: 32px;
+                            border: none;
+                            box-sizing: border-box;
+                            cursor: pointer;
+                           }
+
+                           button.trade:hover {
+                               opacity: 0.9;
+                           }
+                        }
+                    }
+                }
+
+                p.see-all-coins {
+                    margin-top: 20px;
+                    
+                    a {
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 12px;
+                        line-height: 19px;
+                        text-decoration-line: underline;
+                        color: color(Fidelity1);
+                    }
+                }
+            }
+        }
+    }
+
+    div.bg-screen-four {
+        width: 100%;
+        height: 765px;
+        position: relative;
+        left: 0;
+        top: 150px;
+
+        div.bg-elipse {
+            position: absolute;
+            top: 182.5px;
+            left: 50%;
+            transform: translate(-50%);
+            height: 365px;
+            width: 968px;
+            border-radius: 0px;
+            z-index: -100;
+
+            div.elipse-one, div.elipse-two {
+                width: 365px;
+                height: 100%;
+                border-radius: 50%/50%;
+                position: absolute;
+                top: 0;
+            }
+
+            div.elipse-one {
+                left: 0;
+                background: #7000FF4D;
+                filter: blur(200px);
+            }
+
+            div.elipse-two {
+               right: 0; 
+               background: #FF00C74D;
+               filter: blur(200px);
+            }
+        }
+
+        div.get-started {
+            width: 100%;
+            height: 430px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            div.how-to-get-started {
+                width: 533.5px;
+                height: 239px;
+
+                h1.heading {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 44px;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(TitleColor);
+                    margin-bottom: 10px;
+                }
+
+                p.subtitle {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 160%;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(SubtitleColor);
+                    margin-bottom: 40px;
+                }
+
+                button.get-started {
+                    width: 190px;
+                    height: 50px;
+                    background: color(Fidelity1);
+                    border-radius: 10px;
+                    border: none;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: center;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(PureWhite);
+                }
+
+                button.get-started:hover {
+                    opacity: 0.9;
+                }
+            }
+
+            div.starting-links {
+                width: 533.5px;
+                height: 100%;
+
+                div.links {
+                    width: 100%;
+                    height: 128px;
+                    background: color(PureWhite);
+                    border: 1px solid color(Text4);
+                    border-radius: 18px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: 23px;
+                    cursor: pointer;
+
+                    img {
+                        margin: 0 20px;
+                    }
+
+                    div.action-content {
+                        p {
+                            font-family: 'Raleway';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 30px;
+                            font-feature-settings: 'salt' on, 'liga' off;
+                            color: color(BlackTitle);
+                            margin-bottom: 10px;
+                        }
+
+                        p.subtitle {
+                            font-family: 'Roboto';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 24px;
+                            font-feature-settings: 'salt' on, 'liga' off;
+                            color: color(Text2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.bg-screen-five {
+        width: 100%;
+        height: 1079px;
+        margin-top: 150px;
+
+        div.articles {
+            width: 100%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            row-gap: 40px;
+            column-gap: 24px;
+
+            div.header {
+                grid-column: 1 / span 5;
+                grid-row: 1 / 2;
+                text-align: center;
+
+                h3.title {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 44px;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(TitleColor);
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                p.subtitle {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 160%;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(SubtitleColor);
+                }
+
+            }
+
+            div.pic {
+                width: 100%;
+                height: 100%;
+                background: color(PureWhite);
+                border: 1px solid color(Text4);
+                
+                div.image {
+                    height: 50%;
+                    width: 100%;
+                    border-radius: 18px 18px 0 0;
+                }
+            }
+
+            div.about {
+                border-radius: 18px;
+                cursor: pointer;
+
+                p.button {
+                    width: 95px;
+                    height: 22px;
+                    background: rgba(15, 174, 150, 0.15);
+                    border-radius: 4px;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 22px;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(Fidelity1);
+                    margin: 20px;
+                    text-align: center;
+                }
+
+                p.learn-about {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(BlackTitle);
+                    margin: 0 20px;
+                }
+
+                p.subtitle {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(Text2);
+                    margin: 13px 20px;
+                }
+            }
+
+            div.learn-about-one {
+                grid-column: 1 / span 2;
+                grid-row: 2 / 4;
+                background: url(../img/Art_img_1.png) no-repeat;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: -100;
+
+                p.one {
+                    padding: 4px 8px;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-feature-settings: 'salt' on, 'liga' off;
+                    color: color(PureWhite);
+                    border-radius: 4px;
+                    background: #FFFFFF80;
+                    width: 113px;
+                    margin: 320px 30px;
+                    text-align: center;
+                }
+
+                div.overlay {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 18px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    cursor: pointer;
+                    background: linear-gradient(0deg, rgba(38, 1, 68, 0.5), rgba(38, 1, 68, 0.5));
+
+                    p.learn-about-one {
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 36px;
+                        line-height: 44px;
+                        font-feature-settings: 'salt' on, 'liga' off;
+                        color: color(PureWhite);
+                        margin: 220px 30px;
+                    }
+                }
+            }
+
+            div.learn-about-two {
+                grid-column: 3 / 4;
+                grid-row: 2 / 4;
+
+                div.image {
+                    background: url(../img/Art_img_2.png) no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+
+            div.learn-about-three {
+                grid-column: 4 / 5;
+                grid-row: 2 / 4;
+
+                div.image {
+                    background: url(../img/Art_img_3.png) no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                }
+            }
+
+            div.learn-about-four {
+                grid-column: 1 / 2;
+                grid-row: 4 / 6;
+
+                div.image {
+                    background: url(../img/Art_img_4.png) no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                }
+            }
+
+            div.learn-about-five {
+                grid-column: 2 / 3;
+                grid-row: 4 / 6;
+
+                div.image {
+                    background: url(../img/Art_img_5.png) no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                }
+            }
+
+            div.learn-about-six {
+                grid-column: 3 / 4;
+                grid-row: 4 / 6;
+
+                div.image {
+                    background: url(../img/Art_img_6.png) no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                }
+            }
+
+            div.learn-about-seven {
+                grid-column: 4 / 5;
+                grid-row: 4 / 6;
+
+                div.image {
+                    background: url(../img/Art_img_7.png) no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                }
+            }
+        }
+
+        p.see-all-links {
+            margin-top: 50px;
+            a {
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                text-decoration-line: underline;
+                color: color(Fidelity1);
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        height: 297px;
+        margin-top: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #FFFFFF;
+        border-top: 1px solid color(Text4);
+
+        div.logo-and-links {
+            width: 287px;
+            height: 175px;
+
+            img {
+                margin-bottom: 30px;
+                margin-top: 20px;
+            }
+
+            ul.social-media-links {
+                width: 132px;
+                height: 26px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            p.subtitle {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                font-feature-settings: 'salt' on, 'liga' off;
+                color: color(Text2);
+                margin-top: 32px;
+            }
+        }
+    }
+
+    ul.footer-links {
+        width: auto;
+        height: 198px;
+
+        li {
+            margin-bottom: 20px;
+
+            a {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                font-feature-settings: 'salt' on, 'liga' off;
+                color: color(SubtitleColor);
+            }
+
+            a:hover {
+                color: #0FAE96;
+            }
+        }
+        
+        li:nth-child(1) {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            font-feature-settings: 'salt' on, 'liga' off;
+            color: color(TitleColor);
+        }
+    }
+}

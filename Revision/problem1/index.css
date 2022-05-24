@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:400,400i,500,500i,600,600i,700,700i&display=swap");
+* {
+  text-decoration: none;
+  list-style-type: none;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  font-family: "lato", "Arial", "Helvetica", "sans-serif";
+  font-style: normal;
+  text-align: center;
+}
+
+body header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50000;
+  background-color: crimson;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+body header a h1 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-left: 50px;
+}
+body header ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 50px;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  text-align: center;
+}
+body header ul li a {
+  font-weight: 700;
+  padding: auto;
+}
+body header ul li a:hover {
+  background: #fff;
+  color: crimson;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+body header ul li:nth-child(1) {
+  margin-right: 25px;
+}
+body header ul li.login-link {
+  font-weight: 700;
+  margin-left: 50px;
+  padding: 5px;
+}
+body header ul li.login-link a {
+  font-size: 0.8em;
+  padding: 10px 10px;
+  background-color: #fff;
+  color: crimson;
+  border-radius: 3px;
+  opacity: 0.9;
+}
+body header ul li.login-link a:hover {
+  opacity: 1;
+}
+body div.wrapper {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+body div.wrapper #card-zone {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(85px, auto);
+  gap: 5px;
+  max-width: 80%;
+  margin: 0 auto;
+  grid-template-areas: "div-one div-one div-one div-two div-two" "div-one div-one div-one div-two div-two" "div-one div-one div-one div-two div-two" "div-three  div-four div-four div-five div-five" "div-three  div-four div-four div-five div-five" "div-three  div-four div-four div-five div-five";
+}
+body div.wrapper #card-zone div.zone {
+  border: 1px solid rgba(70, 130, 179, 0.125);
+  text-align: left;
+  padding: 15px 15px;
+  font-weight: 500;
+  color: #222;
+  font-size: 0.8em;
+}
+body div.wrapper #card-zone div.one {
+  grid-area: div-one;
+  background: url(./img/1.jpg) no-repeat center;
+  background-size: 630px 300px;
+  border: 1px solid crimson;
+}
+body div.wrapper #card-zone div.two {
+  grid-area: div-two;
+  background: url(./img/2.jpg) no-repeat center;
+  background-size: 390px 260px;
+}
+body div.wrapper #card-zone div.three {
+  grid-area: div-three;
+  background: url(./img/3.jpg) no-repeat center;
+  background-size: 390px 260px;
+  border: 1px solid crimson;
+}
+body div.wrapper #card-zone div.four {
+  grid-area: div-four;
+  background: url(./img/4.jpg) no-repeat center;
+  background-size: 390px 260px;
+}
+body div.wrapper #card-zone div.five {
+  grid-area: div-five;
+  background: url(./img/5.jpg) no-repeat center;
+  background-size: 390px 260px;
+  border: 1px solid crimson;
+}
+body div.wrapper Article {
+  margin-top: 100px;
+  display: flex;
+  flex: 1 0 calc(100% - 100px);
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+body div.wrapper Article div.card {
+  width: 250px;
+  min-height: auto;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: wrap;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 2px 4px 15px rgba(70, 130, 179, 0.25), 0px 4px 4px rgba(70, 130, 179, 0.125), -2px -4px 15px rgba(70, 130, 179, 0.25), 0px -4px 4px rgba(70, 130, 179, 0.125);
+}
+body div.wrapper Article div.card img {
+  width: 220px;
+  height: 35%;
+  padding: 15px 15px;
+  border-bottom: 2px solid #ddd;
+}
+body div.wrapper Article div.card p {
+  color: #333;
+  text-align: justify;
+  line-height: 1.5em;
+  font-size: 0.8em;
+  padding: 15px;
+  font-weight: 500;
+}
+body footer {
+  width: 100%;
+  height: 100px;
+  background-color: #222;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+body footer p {
+  font-size: 0.7em;
+  font-weight: 400;
+  padding-top: 10px;
+  line-height: 20px;
+  text-align: left;
+}
+body footer ul {
+  display: flex;
+  align-items: center;
+  width: 500px;
+}
+body footer ul li {
+  margin-left: 5px;
+  text-align: right;
+  width: 80px;
+}
+body footer ul li a {
+  font-size: 0.7em;
+  font-weight: 400;
+}
+body footer ul li a:hover {
+  font-size: 0.75em;
+  opacity: 0.9;
+}
+body footer ul li img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+body footer ul li:nth-child(even) {
+  width: 20px;
+  height: 17px;
+}/*# sourceMappingURL=index.css.map */
